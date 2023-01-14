@@ -1,6 +1,5 @@
 import './App.css';
 import Homepage from './Components/Pages/Homepage';
-<<<<<<< HEAD
 import { Route, Routes } from "react-router-dom";
 import SignIn from './Components/Pages/SignIn';
 import SignUp from './Components/Pages/SignUp';
@@ -18,15 +17,7 @@ function App() {
             <Route path="/matches" element={<Matches />} />
           </Routes>
         </div>
-=======
-
-function App() {
-  return (
-    <div className="App">
-        <Homepage />
-    </div>
->>>>>>> a742b615570b5e018578b90ada67f697252e044e
-  );
+  )
 }
 
 export default App;
