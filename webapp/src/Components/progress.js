@@ -9,7 +9,7 @@ const Progress = () => {
   console.log(active)
   const arr=[];
   for (let i=0; i<circle; i++) {
-    arr.push(<Circle className="circle">{i}</Circle>)
+    arr.push(<Circle className={i<active?"circle active":"circle"} key={i}>{i}</Circle>)
     ;
 
   }
