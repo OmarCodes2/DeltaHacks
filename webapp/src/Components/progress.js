@@ -1,23 +1,26 @@
 import React from 'react'
 import Circle from './Circle';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../progress.css';
 
 const Progress = () => {
   const[circle] = useState(4);
   const [active, setActive] = useState(0);
+  const [width, setWidth] = useState(0);
+  useEffect(() => {
+  setWidth(100/(circle-1)*active)
+  }, [circle, active])
   console.log(active)
   const arr=[];
   for (let i=0; i<circle; i++) {
-    arr.push(<Circle className={i<active?"circle active":"circle"} key={i}>{i}</Circle>)
-    ;
-
-  }
+      arr.push(<Circle classname={i<=active ? true : false} key={i}></Circle>);
+    }
+    
   return (
     <div className="container">
     <div className="content"> 
     <div className="progressbar">
-    <div className="progress"></div>
+    <div className="progress"  style = {{width:width+"%"}}></div>
     {arr}
     </div>
     <div className="button">

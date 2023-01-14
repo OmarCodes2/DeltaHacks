@@ -2,7 +2,10 @@ import React from 'react'
 
 const Circle = ({classname, children}) => {
     return (
-        <div className="circle">{children}</div>
+        <div>
+            {classname && <div className="circle active">{children}</div>}
+            {!classname && <div className="circle">{children}</div>}
+        </div>
     )
 }
     
