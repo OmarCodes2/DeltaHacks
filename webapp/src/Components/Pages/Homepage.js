@@ -5,10 +5,10 @@ const Homepage = () => {
         <section className="homepage">
             <div className="homepage-wrapper">
                 <h1>Roommate Matcher</h1>
-                <p>Take the test to find and contact compatible roommates this season</p>
+                <p>Two minutes of questions. A year–or more–of perfect roommates. Take the test to find compatible roommates this season.</p>
                 <div className="homepage-buttons">
-                    <Action name="Take the test" destination="/questionnaire-start" />
-                    <Action name="View your matches" destination="/matches-start" />
+                    <Action name="TAKE THE TEST" destination="/questionnaire-start" />
+                    <Action name="VIEW YOUR MATCHES" destination="/matches-start" />
                 </div>
             </div>
         </section>
