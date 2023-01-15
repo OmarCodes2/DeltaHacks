@@ -1,7 +1,8 @@
-import { Link, Route, Routes } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useState } from "react";
-function SignIn() {
 
+function SignIn() {
+  
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -13,18 +14,17 @@ function SignIn() {
       setErrorMessage("Do not leave fields blank");
     }
   }
+
   return (
-    <div>
-        <div>Sign In</div>
+    <div className="login">
+        <h1 className="login-title">Welcome back</h1>
         <form onSubmit={handleSubmit}>
-            <input type="email" placeholder="example@example.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <div>{errorMessage}</div>
-            <input type="submit" value="Submit" />
-            
+            <input className="input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input className="input" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <Link to="/home"><input type="submit" value="SIGN IN" className="action-button" /></Link>
         </form>
-        <div><Link to="/signup">Have an account Sign up</Link></div>
-    </div>  
+        <p>Don't have an account? <Link className="login-redirect" to="/signup">Sign up</Link></p>
+    </div>
   );
 }
 

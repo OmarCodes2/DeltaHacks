@@ -1,9 +1,14 @@
 import { createContext, useState } from "react";
+import Confirmation from "../Confirmation";
+import Exit from "../Exit";
+import Progress from "../Progress";
 import Form from "./Form";
 
 export const ResponseContext = createContext();
 
 const Questions = () => {
+    const [ page, setPage ] = useState(0);
+    const [active, setActive] = useState(0);
     const [ responses, setResponses ] = useState({
         program: null,
         year: null,
@@ -26,15 +31,21 @@ const Questions = () => {
         cleaning: null,
         cooking: null,
         numSearchers: null,
+        numHopefuls: null,
         maxRent: null,
-        contact: null
+        contact: null,
+        names: []
     });
+
+    const [ confirm, setConfirm ] = useState(false);
     
     return(
         <div className="questions">
-            Progress bar goes here
+            <Exit />
             <ResponseContext.Provider value={{responses, setResponses}}>
-                <Form />
+                {confirm && <Confirmation />}
+                <Progress active={active} setActive={setActive} page={page} />
+                <Form setConfirm={setConfirm} page={page} setPage={setPage} />
             </ResponseContext.Provider>
         </div>
     )

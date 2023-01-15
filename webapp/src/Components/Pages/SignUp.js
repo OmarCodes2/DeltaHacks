@@ -1,6 +1,8 @@
-import { Link, Route, Routes } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useState } from "react";
+
 function SignUp() {
+  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("")
   const [email,setEmail] = useState("");
@@ -8,6 +10,7 @@ function SignUp() {
   const [errorMessage, setErrorMessage] = useState("");
   const [mailError, setMailError] = useState("");
   
+    
   const handleSubmit = (event) => {
     setErrorMessage("");
     setMailError("");
@@ -21,19 +24,16 @@ function SignUp() {
   }
 
   return (
-    <div>
-        <div>Sign Up</div>
-        <form onSubmit={handleSubmit}> 
+    <div className="login">
+        <h1 className="login-title">Welcome</h1>
+        <form onSubmit={handleSubmit}>
             <input type="text" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
             <input type="text" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
-            <input type="email" placeholder="example@example.com" value={email} onChange={(e) => setEmail(e.target.value)}/>
-            <div>{mailError}</div>
-            <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <input type="submit" value="Submit" />
-            <div>{errorMessage}</div>
+            <input className="input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input className="input" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+            <Link to="/home"><input type="submit" value="SIGN UP" className="action-button" /></Link>
         </form>
-        <div><Link to="/signin">Have an account Sign in</Link></div>
-        
+        <p>Have an account? <Link className="login-redirect" to="/signin">Sign in</Link></p>
     </div>
   );
 }
