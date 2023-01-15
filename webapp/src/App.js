@@ -3,6 +3,7 @@ import Homepage from './Components/Pages/Homepage';
 import { Route, Routes } from "react-router-dom";
 import SignIn from './Components/Pages/SignIn';
 import SignUp from './Components/Pages/SignUp';
+
 import Questions from './Components/Pages/Questions';
 import Matches from './Components/Pages/Matches';
 import Cover from './Components/Cover';
@@ -24,6 +25,7 @@ function App() {
           </Routes>
         </div>
   )
+
 }
 
 export default App;
