@@ -144,10 +144,6 @@ def sortComp(list1):
 
 sortComp(list11pref)
 sortComp(list12pref)
-
-print(list11pref)
-print(list12pref)
-
 sortComp(list21pref)
 sortComp(list22pref)
 sortComp(list1_2pref)
@@ -158,7 +154,7 @@ def convertToProcess(list):
   process = [[] for i in range(len(list))]
   for i in range(len(list)):
     for j in range(len(list[i])):
-      process[i].append(j)
+      process[i].append(list[i][j][0])
   return process
 
 list11pro = convertToProcess(list11pref)
