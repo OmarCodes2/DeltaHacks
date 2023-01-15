@@ -27,8 +27,8 @@ function SignUp() {
     <div className="login">
         <h1 className="login-title">Welcome</h1>
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
-            <input type="text" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
+            <input className="input" type="text" placeholder="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)}/>
+            <input className="input" type="text" placeholder="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
             <input className="input" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input className="input" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <Link to="/home"><input type="submit" value="SIGN UP" className="action-button" /></Link>

@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import Confirmation from "../Confirmation";
 import Exit from "../Exit";
-import Progress from "../Progress";
+import Progress from "../progress";
 import Form from "./Form";
 
 export const ResponseContext = createContext();
