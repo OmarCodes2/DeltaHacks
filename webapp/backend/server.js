@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const Users = require('./models/user')
 require('dotenv').config();
 
 const app = express();
@@ -25,5 +25,6 @@ mongoose.connect(uri,connectionParams)
     .catch( (err) => {
         console.error(`Error connecting to the database. n${err}`);
     })
+
 
 app.listen(4000, () => console.log("Server started on port 4000"));
