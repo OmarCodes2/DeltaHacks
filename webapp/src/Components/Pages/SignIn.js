@@ -1,14 +1,20 @@
-import { Link, Route, Routes } from "react-router-dom"
+import { Link } from "react-router-dom"
+
 function SignIn() {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('signed in')
+  }
+
   return (
-    <div>
-        <div>Sign In</div>
-        <form>
-            <input type="email" placeholder="example@example.com"/>
-            <input type="password"/>
-            <input type="submit" value="Submit" />
+    <div className="login">
+        <h1 className="login-title">Welcome back</h1>
+        <form onSubmit={handleSubmit}>
+            <input className="input" type="email" placeholder="Email"/>
+            <input className="input" type="password" placeholder="Password"/>
+            <Link to="/home"><input type="submit" value="SIGN IN" className="action-button" /></Link>
         </form>
-        <div><Link to="/signup">Have an account Sign up</Link></div>
+        <p>Don't have an account? <Link className="login-redirect" to="/signup">Sign up</Link></p>
     </div>
   );
 }
