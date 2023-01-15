@@ -7,6 +7,7 @@ import SignUp from './Components/Pages/SignUp';
 import Questions from './Components/Pages/Questions';
 import Matches from './Components/Pages/Matches';
 import Cover from './Components/Cover';
+import Card from './Components/Card';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
             
             <Route path="/signup" element={<SignUp />}/>
             <Route path="/signin" element={<SignIn />}/>
+
+            <Route path="/matches-temp" element={<Card ></Card>}></Route>
           </Routes>
         </div>
   )
