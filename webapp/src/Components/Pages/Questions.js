@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Confirmation from "../Confirmation";
 import Form from "./Form";
 
 export const ResponseContext = createContext();
@@ -26,15 +27,19 @@ const Questions = () => {
         cleaning: null,
         cooking: null,
         numSearchers: null,
+        numHopefuls: null,
         maxRent: null,
         contact: null
     });
+
+    const [ confirm, setConfirm ] = useState(false);
     
     return(
         <div className="questions">
-            Progress bar goes here
             <ResponseContext.Provider value={{responses, setResponses}}>
-                <Form />
+                {confirm && <Confirmation setConfirm={setConfirm} />}
+                Progress bar goes here
+                <Form setConfirm={setConfirm} />
             </ResponseContext.Provider>
         </div>
     )
