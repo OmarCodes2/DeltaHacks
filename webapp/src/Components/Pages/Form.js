@@ -1,22 +1,22 @@
-import { useState } from "react";
 import FormLifestyle from "./FormLifestyle";
 import FormMovein from "./FormMovein";
 import FormRoommate from "./FormRoommate";
 import FormStudent from "./FormStudent";
 
-const Form = ({ setConfirm }) => {
-    const [ page, setPage ] = useState(1);
+const Form = ({ setConfirm, page, setPage }) => {
 
     const prevPage = () => {
-        page != 1 && setPage(prevPage => prevPage - 1);
+        window.scrollTo(0,0)
+        page != 0 && setPage(prevPage => prevPage - 1);
     }
 
     const nextPage = () => {
-        page != 4 && setPage(prevPage => prevPage + 1);
+        window.scrollTo(0,0)
+        page != 3 && setPage(prevPage => prevPage + 1);
     }
 
     switch (page) {
-        case 1:
+        case 0:
             return(
                 <div className="form-wrapper">
                     <p className="form-page-label">First, let's get some basic details about you.</p>
@@ -26,7 +26,7 @@ const Form = ({ setConfirm }) => {
                     </div>
                 </div>
             );
-        case 2:
+        case 1:
             return(
                 <div className="form-wrapper">
                     <p className="form-page-label">Next, let's delve into your lifestyle preferences.</p>
@@ -37,7 +37,7 @@ const Form = ({ setConfirm }) => {
                     </div>
                 </div>
             );
-        case 3:
+        case 2:
             return(
                 <div className="form-wrapper">
                     <p className="form-page-label">Now let's consider what you're looking for in a roommate.</p>
@@ -48,7 +48,7 @@ const Form = ({ setConfirm }) => {
                     </div>
                 </div>
             );
-        case 4:
+        case 3:
             return(
                 <div className="form-wrapper">
                     <p className="form-page-label">Finally, let's take in logistical move-in details.</p>

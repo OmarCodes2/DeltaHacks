@@ -5,7 +5,6 @@ const IntDropdown = ({question, items, responseType}) => {
     const { responses, setResponses } = useContext(ResponseContext);
 
     const updateResponses = (e) => {
-        console.log(responses)
         setResponses((prevResponses) => {
             return {...prevResponses, [responseType]: e.target.value}
         })

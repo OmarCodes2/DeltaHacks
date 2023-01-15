@@ -1,6 +1,6 @@
 import Action from "./Action";
 
-const Confirmation = ({ setConfirm }) => {
+const Confirmation = () => {
     return(
         <section className="confirmation">
             <div className="confirmation-wrapper">
