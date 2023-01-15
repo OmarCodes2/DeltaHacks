@@ -140,5 +140,11 @@ h1 {
   padding: 0.5rem 1rem;
   outline: none;
   border: 1px solid var(--light-grey);
+  font-family: 'Mulish', sans-serif;
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.question select:focus {
+  outline: 1px solid var(--grey);
 }
