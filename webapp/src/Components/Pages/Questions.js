@@ -5,7 +5,6 @@ export const ResponseContext = createContext();
 
 const Questions = () => {
     const [ responses, setResponses ] = useState({
-        faculty: null,
         program: null,
         year: null,
         gender: null,
@@ -31,7 +30,6 @@ const Questions = () => {
         contact: null
     });
     
-
     return(
         <div className="questions">
             Progress bar goes here
